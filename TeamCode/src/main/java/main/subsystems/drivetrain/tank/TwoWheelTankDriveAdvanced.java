@@ -12,7 +12,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 
-import main.subsystems.drivetrain.SubsystemBase;
+import main.subsystems.SubsystemBase;
 
 /*
     Motor Layout

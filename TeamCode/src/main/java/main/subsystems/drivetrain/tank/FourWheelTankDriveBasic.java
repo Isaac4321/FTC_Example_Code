@@ -1,7 +1,5 @@
 package main.subsystems.drivetrain.tank;
 
-import android.os.Build;
-
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -11,7 +9,7 @@ import com.qualcomm.robotcore.util.Range;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 
-import main.subsystems.drivetrain.SubsystemBase;
+import main.subsystems.SubsystemBase;
 
 /*
     Motor Layout
