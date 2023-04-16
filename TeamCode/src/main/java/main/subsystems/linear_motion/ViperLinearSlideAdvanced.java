@@ -9,7 +9,6 @@ import com.qualcomm.robotcore.util.Range;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 import main.subsystems.SubsystemBase;
-import main.subsystems.drivetrain.holonomic.MecanumHolonomicDriveAdvanced;
 
 public class ViperLinearSlideAdvanced extends SubsystemBase {
     private static final class Constants {
@@ -42,7 +41,7 @@ public class ViperLinearSlideAdvanced extends SubsystemBase {
         slideMotor.setPower(Range.clip(power, -1, 1));
     }
 
-    public void extendTo(double distance, DistanceUnit distanceUnit) {
+    public void extend(double distance, DistanceUnit distanceUnit) {
         slideMotor.setTargetPosition(slideMotor.getCurrentPosition() + (int) distanceUnit.toPulses(distance));
         slideMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 

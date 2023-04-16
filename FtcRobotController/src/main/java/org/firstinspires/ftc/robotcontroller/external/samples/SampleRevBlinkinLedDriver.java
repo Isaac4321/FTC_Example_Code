@@ -51,7 +51,7 @@ import java.util.concurrent.TimeUnit;
  */
 @TeleOp(name="BlinkinExample")
 @Disabled
-public class SampleRevBlinkinLedDriver extends OpMode {
+public class    SampleRevBlinkinLedDriver extends OpMode {
 
     /*
      * Change the pattern every 10 seconds in AUTO mode.
