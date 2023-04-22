@@ -10,6 +10,10 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 import main.subsystems.SubsystemBase;
 
+/**
+ * Example subsystem for controlling a cascading Viper linear slide.
+ * This basic version has no autonomous implemented, it is merely a class for basic control.
+ */
 public class ViperLinearSlideBasic extends SubsystemBase {
     private final DcMotorEx slideMotor;
 

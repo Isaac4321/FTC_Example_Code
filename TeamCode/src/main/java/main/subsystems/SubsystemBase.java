@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
+/** Base class for all subsystems. */
 public abstract class SubsystemBase {
     private final Telemetry telemetry;
     private final HardwareMap hardwareMap;
