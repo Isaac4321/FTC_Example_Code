@@ -14,8 +14,10 @@ public class Robot extends RobotBase {
 
     private final Gamepad controller1;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public Robot(OpMode opMode) {
         super(opMode);
+        initSubsystems();
         controller1 = opMode.gamepad1;
     }
 

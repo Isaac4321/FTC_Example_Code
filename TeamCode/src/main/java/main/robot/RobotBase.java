@@ -7,7 +7,6 @@ public abstract class RobotBase {
 
     public RobotBase(OpMode opMode) {
         this.opMode = opMode;
-        initSubsystems();
     }
 
     public abstract void initSubsystems();

@@ -7,7 +7,6 @@ import org.opencv.imgproc.Imgproc;
 import org.openftc.easyopencv.OpenCvPipeline;
 
 public class DrawingShapesPipeline extends OpenCvPipeline {
-    private final Mat output = new Mat();
 
     @Override
     public Mat processFrame(Mat input) {
