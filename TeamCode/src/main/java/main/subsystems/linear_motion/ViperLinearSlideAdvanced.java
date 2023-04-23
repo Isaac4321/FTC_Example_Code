@@ -13,7 +13,8 @@ import main.subsystems.SubsystemBase;
 //TODO: PID PID PID
 public class ViperLinearSlideAdvanced extends SubsystemBase {
     private static final class Constants {
-        private static final double EXTENSION_SPEED = 0.1;
+        public static final double EXTEND_SPEED = 0.60;
+        public static final double SHRINK_SPEED = -0.30;
 
         public static final double PULSES_PER_MOTOR_REV = -1;
         public static final double DRIVE_GEAR_REDUCTION = -1;
@@ -37,19 +38,27 @@ public class ViperLinearSlideAdvanced extends SubsystemBase {
         slideMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
+    public void extend() {
+        slideMotor.setPower(Constants.EXTEND_SPEED);
+    }
 
-    public void power(double power) {
-        slideMotor.setPower(Range.clip(power, -1, 1));
+    public void shrink() {
+        slideMotor.setPower(Constants.SHRINK_SPEED);
+    }
+
+    public void stop() {
+        slideMotor.setPower(0);
     }
 
     public void extend(double distance, DistanceUnit distanceUnit) {
         slideMotor.setTargetPosition(slideMotor.getCurrentPosition() + (int) distanceUnit.toPulses(distance));
         slideMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
+        extend();
         while (!atMaxExtension() && !atMinExtension() && slideMotor.isBusy()) {
-            power(Constants.EXTENSION_SPEED);
+
         }
-        power(0);
+        stop();
         slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 

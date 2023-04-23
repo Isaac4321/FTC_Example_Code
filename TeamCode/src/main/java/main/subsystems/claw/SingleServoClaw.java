@@ -12,11 +12,11 @@ public class SingleServoClaw extends SubsystemBase {
         private static final double CLOSED_CLAW_POS = 0.0;
         private static final double OPENED_CLAW_POS = 1.0;
     }
+
     private final Servo clawServo;
 
     public SingleServoClaw(Telemetry telemetry, HardwareMap hardwareMap) {
         super(telemetry, hardwareMap);
-
         clawServo = hardwareMap.get(Servo.class, "clawServo");
 
         clawServo.setDirection(Servo.Direction.FORWARD);
