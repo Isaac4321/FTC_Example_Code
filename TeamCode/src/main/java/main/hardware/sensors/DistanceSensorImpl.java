@@ -1,4 +1,4 @@
-package main.hardware;
+package main.hardware.sensors;
 
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;

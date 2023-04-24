@@ -1,4 +1,4 @@
-package main.hardware;
+package main.hardware.misc;
 
 import com.qualcomm.hardware.rev.RevBlinkinLedDriver;
 import com.qualcomm.robotcore.hardware.HardwareMap;

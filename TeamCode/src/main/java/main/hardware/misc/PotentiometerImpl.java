@@ -1,4 +1,4 @@
-package main.hardware;
+package main.hardware.misc;
 
 import com.qualcomm.robotcore.hardware.AnalogSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
