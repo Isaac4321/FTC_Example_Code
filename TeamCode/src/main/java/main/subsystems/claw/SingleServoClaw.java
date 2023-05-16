@@ -7,6 +7,9 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 import main.subsystems.SubsystemBase;
 
+/**
+ * An example subsystem of a claw driven by one servo.
+ */
 public class SingleServoClaw extends SubsystemBase {
     private static final class Constants {
         private static final double CLOSED_CLAW_POS = 0.0;
@@ -15,6 +18,7 @@ public class SingleServoClaw extends SubsystemBase {
 
     private final Servo clawServo;
 
+    /** Initializes the servo, make sure to have the servo mapped in your robot configuration. */
     public SingleServoClaw(Telemetry telemetry, HardwareMap hardwareMap) {
         super(telemetry, hardwareMap);
         clawServo = hardwareMap.get(Servo.class, "clawServo");
@@ -22,10 +26,12 @@ public class SingleServoClaw extends SubsystemBase {
         clawServo.setDirection(Servo.Direction.FORWARD);
     }
 
+    /** Closes the claw. */
     public void closeClaw() {
         clawServo.setPosition(Constants.CLOSED_CLAW_POS);
     }
 
+    /** Opens the claw. */
     public void openClaw() {
         clawServo.setPosition(Constants.OPENED_CLAW_POS);
     }

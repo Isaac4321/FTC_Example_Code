@@ -12,10 +12,12 @@ import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
 public class AccelerationSensorImpl {
     private final AccelerationSensor accelerationSensor;
 
+    /** Initializes the Acceleration sensor, make sure to have the acceleration sensor mapped in your configuration. */
     public AccelerationSensorImpl(HardwareMap hardwareMap) {
         accelerationSensor = hardwareMap.get(AccelerationSensor.class, "accelerationSensor");
     }
 
+    /** Returns the acceleration of the sensor in g's*/
     public Acceleration getAcceleration() {
         return accelerationSensor.getAcceleration();
     }

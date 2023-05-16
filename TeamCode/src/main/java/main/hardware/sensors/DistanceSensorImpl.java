@@ -12,7 +12,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 public class DistanceSensorImpl {
     private final DistanceSensor distanceSensor;
 
-    /** Initializes the distance sensor, make sure to have the distance sensor mapped in your configuration. */
+    /** Initializes the distance sensor, make sure to have the distance sensor mapped in your robot configuration. */
     public DistanceSensorImpl(HardwareMap hardwareMap) {
         distanceSensor = hardwareMap.get(DistanceSensor.class, "distanceSensor");
     }

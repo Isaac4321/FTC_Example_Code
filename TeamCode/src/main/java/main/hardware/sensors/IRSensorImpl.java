@@ -10,14 +10,17 @@ import com.qualcomm.robotcore.hardware.IrSeekerSensor;
 public class IRSensorImpl {
     private final IrSeekerSensor irSensor;
 
+    /** Initializes the IR sensor, make sure to have the IR sensor mapped in your robot configuration. */
     public IRSensorImpl(HardwareMap hardwareMap) {
         irSensor = hardwareMap.get(IrSeekerSensor.class, "irSensor");
     }
 
+    /** Returns the estimated angle of which the IR signal is coming from. 0 if no IR signal is detected. */
     public double getAngle() {
         return irSensor.getAngle();
     }
 
+    /** Returns the strength of the IR signal. [0, 1] */
     public double getStrength() {
         return irSensor.getStrength();
     }

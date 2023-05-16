@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class ColorSensorImpl {
     private final ColorSensor colorSensor;
 
-    /** Initializes the color sensor, make sure to have the color sensor mapped in your configuration. */
+    /** Initializes the color sensor, make sure to have the color sensor mapped in your robot configuration. */
     public ColorSensorImpl(HardwareMap hardwareMap) {
         colorSensor = hardwareMap.get(ColorSensor.class, "colorSensor");
     }
@@ -30,17 +30,17 @@ public class ColorSensorImpl {
         return new int[]{colorSensor.red() * 255, colorSensor.green() * 255, colorSensor.blue() * 255};
     }
 
-    /** Return the scaled (0-255) red value from the sensor. */
+    /** Returns the scaled (0-255) red value from the sensor. */
     public int getRed() {
         return colorSensor.red() * 255;
     }
 
-    /** Return the scaled (0-255) green value from the sensor. */
+    /** Returns the scaled (0-255) green value from the sensor. */
     public int getGreen() {
         return colorSensor.green() * 255;
     }
 
-    /** Return the scaled (0-255) blue value from the sensor. */
+    /** Returns the scaled (0-255) blue value from the sensor. */
     public int getBlue() {
         return colorSensor.blue() * 255;
     }

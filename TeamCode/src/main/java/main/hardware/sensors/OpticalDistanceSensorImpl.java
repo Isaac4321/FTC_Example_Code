@@ -11,10 +11,12 @@ import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 public class OpticalDistanceSensorImpl {
     private final OpticalDistanceSensor opticalDistanceSensor;
 
+    /** Initializes the Optical sensor, make sure to have the optical sensor mapped in your configuration. */
     public OpticalDistanceSensorImpl(HardwareMap hardwareMap) {
         opticalDistanceSensor = hardwareMap.get(OpticalDistanceSensor.class, "opticalDistanceSensor");
     }
 
+    /** Returns the light level detected by the light sensor. [0.0, 1.0] */
     public double getLight() {
         return opticalDistanceSensor.getLightDetected();
     }

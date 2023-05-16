@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.TouchSensor;
 public class TouchSensorImpl {
     private final TouchSensor touchSensor;
 
-    /** Initializes the touch sensor, make sure to have the touch sensor mapped in your configuration. */
+    /** Initializes the touch sensor, make sure to have the touch sensor mapped in your robot configuration. */
     public TouchSensorImpl(HardwareMap hardwareMap) {
         touchSensor = hardwareMap.get(TouchSensor.class, "touchSensor");
     }

@@ -11,7 +11,7 @@ public class PressureSensorImpl {
     private final AnalogSensor pressureSensor;
     private final int SCALED = 1;
 
-    /** Initializes the pressure sensor, make sure to have the pressure sensor mapped in your configuration. */
+    /** Initializes the pressure sensor, make sure to have the pressure sensor mapped in your robot configuration. */
     public PressureSensorImpl(HardwareMap hardwareMap) {
         pressureSensor = hardwareMap.get(AnalogSensor.class, "pressureSensor");
     }

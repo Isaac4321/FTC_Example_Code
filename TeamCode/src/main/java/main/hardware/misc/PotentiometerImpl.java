@@ -11,7 +11,7 @@ public class PotentiometerImpl {
     private final AnalogSensor potentiometer;
     private final int SCALED = 1;
 
-    /** Initializes the potentiometer, make sure to have the potentiometer mapped in your configuration. */
+    /** Initializes the potentiometer, make sure to have the potentiometer mapped in your robot configuration. */
     public PotentiometerImpl(HardwareMap hardwareMap) {
         potentiometer = hardwareMap.get(AnalogSensor.class, "potentiometer");
     }

@@ -22,15 +22,15 @@ public class MRGyroImpl {
         gyro.calibrate();
     }
 
-    public double getXAngle() {
+    public double getPitch() {
         return gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.XYX, AngleUnit.DEGREES).firstAngle;
     }
 
-    public double getYAngle() {
+    public double getRoll() {
         return gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.YXZ, AngleUnit.DEGREES).firstAngle;
     }
 
-    public double getZAngle() {
+    public double getYaw() {
         return gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES).firstAngle;
     }
 }

@@ -12,9 +12,9 @@ public class RevBlinkinImpl {
     private final RevBlinkinLedDriver blinkin;
 
     /** Initializes the blinkin, make sure to have the blinkin mapped in your configuration. */
-    public RevBlinkinImpl(HardwareMap hardwareMap) {
+    public RevBlinkinImpl(HardwareMap hardwareMap, int port) {
         ServoControllerEx servoController = hardwareMap.get(ServoControllerEx.class, "blinkinServoController");
-        blinkin = new RevBlinkinLedDriver(servoController, 0); // Port: look on control/expansion hub for port #.
+        blinkin = new RevBlinkinLedDriver(servoController, port); // Port: look on control/expansion hub for port #.
     }
 
     /** Sets the LEDs to a specific pattern. A few example patterns are as follows:

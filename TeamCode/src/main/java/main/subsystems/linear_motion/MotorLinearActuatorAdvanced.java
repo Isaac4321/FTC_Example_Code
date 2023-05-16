@@ -12,6 +12,10 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 import main.subsystems.SubsystemBase;
 import main.subsystems.drivetrain.holonomic.MecanumHolonomicDriveAdvanced;
 
+/**
+ * An example subsystem representing a linear actuator driven by one motor.
+ * This is a advanced version with autonomous capability's.
+ */
 public class MotorLinearActuatorAdvanced extends SubsystemBase {
     private static final class Constants {
         public static final double EXTEND_SPEED = 0.60;
@@ -29,6 +33,7 @@ public class MotorLinearActuatorAdvanced extends SubsystemBase {
 
     private final DcMotorEx actuatorMotor;
 
+    /** Initializes the servo, make sure to have the servo mapped in your robot configuration. */
     public MotorLinearActuatorAdvanced(Telemetry telemetry, HardwareMap hardwareMap) {
         super(telemetry, hardwareMap);
 
@@ -40,18 +45,22 @@ public class MotorLinearActuatorAdvanced extends SubsystemBase {
         actuatorMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
+    /** Extends the actuator at a constant speed. */
     public void extend() {
         actuatorMotor.setPower(Constants.EXTEND_SPEED);
     }
 
+    /** Shrinks the actuator at a constant speed. */
     public void shrink() {
         actuatorMotor.setPower(Constants.SHRINK_SPEED);
     }
 
+    /** Stops the actuator from moving. */
     public void stop() {
         actuatorMotor.setPower(0);
     }
 
+    /** Extends/shrinks the linear actuator a specific distance. */
     public void extendTo(double distance, DistanceUnit distanceUnit) {
         actuatorMotor.setTargetPosition(actuatorMotor.getCurrentPosition() + (int) distanceUnit.toPulses(distance));
         actuatorMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -64,14 +73,17 @@ public class MotorLinearActuatorAdvanced extends SubsystemBase {
         actuatorMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
+    /** Returns if the linkage is at maximum extension. */
     public boolean atMaxExtension() {
         return actuatorMotor.getCurrentPosition() / Constants.PULSES_PER_CENTIMETER > Constants.MAX_EXTENSION - 1.5;
     }
 
+    /** Returns if the linkage is at minimum extension. */
     public boolean atMinExtension() {
         return actuatorMotor.getCurrentPosition() / Constants.PULSES_PER_CENTIMETER < Constants.MIN_EXTENSION + 1.5;
     }
 
+    /** A enum for different distance units eg. inches, centimeters. */
     public enum DistanceUnit {
         CENTIMETRES(Constants.PULSES_PER_CENTIMETER);
 

@@ -9,12 +9,15 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
  */
 public class MagneticSensorImpl {
     private final AnalogSensor magneticSensor;
+    private final int SCALED = 1;
 
+    /** Initializes the Magnetic sensor, make sure to have the magnetic sensor mapped in your robot configuration. */
     public MagneticSensorImpl(HardwareMap hardwareMap) {
         magneticSensor = hardwareMap.get(AnalogSensor.class, "magneticSensor");
     }
 
+    /** Returns the current magnetic field. */
     public double getMagnetism() {
-        return magneticSensor.readRawVoltage();
+        return magneticSensor.readRawVoltage() * SCALED;
     }
 }
